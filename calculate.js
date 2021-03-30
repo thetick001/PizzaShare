@@ -24,4 +24,6 @@ function calculate()
     alert(`Total cost of order is ${beforeSplit.toFixed(2)}`);
     // to fixed as well for two decimals
     alert(`How much each person pays is ${totalPay.toFixed(2)}`);
+
+    // all done!
 }
