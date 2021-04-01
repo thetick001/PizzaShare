@@ -1,12 +1,16 @@
+$(document).ready(function () {
+    $("button").on("click", calculate)
+});
+
 function calculate()
 {
-    //gather all input
+    //gather all input | edit: changed the prompts to make a user able to type data in.
     // ask how many people are paying for the total bill and save it to its own variable
-    let peopleEating = parseFloat( prompt("How many people paying for the pizza?") );
+    let peopleEating = parseFloat( $("#peopleEating").val() );
     // ask how many pizzas, save the answer to a variable
-    let pizzas = parseFloat( prompt("How many pizzas total?") );
+    let pizzas = parseFloat( $("#pizzas").val() );
     // as well as for toppings
-    let toppings = parseFloat( prompt("How many toppings total?") );
+    let toppings = parseFloat( $("#toppings").val() );
 
     // do some math
 
@@ -20,10 +24,11 @@ function calculate()
     let totalPay = beforeSplit / peopleEating;
 
     // OUTPUT!
-    // the total given, and made sure to show two decimals
-    alert(`Total cost of order is ${beforeSplit.toFixed(2)}`);
+    // the total given, and made sure to show two decimals | edit: changed
+    $("span#beforeSplit").text(beforeSplit.toFixed(2));
     // to fixed as well for two decimals
-    alert(`How much each person pays is ${totalPay.toFixed(2)}`);
+    $("span#totalPay").text(totalPay.toFixed(2));
+
 
     // all done!
 }

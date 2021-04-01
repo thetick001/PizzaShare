@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Pizza Sharing</title>
-    
+    <script src="jquery-3.6.0.min.js"></script>
     <script src="calculate.js"></script>
 
 </head>
 <body>
 <h1>Calculate your payment for the pizza!</h1>
-<button onclick="calculate()">Calculate my order payment</button>
+
+<label for="peopleEating">How many people are paying?</label>
+<input type="number" id="peopleEating" min="0" max="100">
+<br>
+<label for="pizzas">How many pizzas would you like? ($15.00 per pizza)</label>
+<input type="number" id="pizzas" min="1" max="1000">
+<br>
+<label for="toppings">How many toppings? ($1.25 per topping)</label>
+<input type="number" id="toppings" min="0" max="1000">
+<br>
+<button>Calculate my payment!</button>
+<br>
+<p>Total cost of order is $<span id="beforeSplit"></span></p>
+<p>Payment of each person paying is $<span id="totalPay"></span></p>
 
 
 </body>
